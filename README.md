@@ -72,7 +72,7 @@ Now that you have a project that is ready to be built with Maven, the next step 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework</groupId>
     <artifactId>jb-hello-world-maven</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>0.1.0</version>
 
     <build>
@@ -111,7 +111,7 @@ With the exception of the optional `<packaging>` element, this is the simplest p
 
 ### Build Java code
 ---
-Maven is now ready to build the project. You can execute several build lifecycle goals with Maven now, including goals to compile the project’s code, create a library package (such as a JAR file), and install the library in the local Maven dependency repository.
+Maven is now ready to build the project. You can execute several build lifecycle goals with Maven now, including goals to compile the project’s code, create a library package (such as a WAR file), and install the library in the local Maven dependency repository.
 
 To try out the build, issue the following at the command line:
 
@@ -121,7 +121,7 @@ To try out the build, issue the following at the command line:
 
 `mvn package`
 
-  + The package goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the target directory. The name of the JAR file will be based on the project’s `<artifactId>` and `<version>`. For example, given the minimal `pom.xml` file from before, the JAR file will be named gs-maven-0.1.0.jar.
+  + The package goal will compile your Java code, run any tests, and finish by packaging the code up in a WAR file within the target directory. The name of the WAR file will be based on the project’s `<artifactId>` and `<version>`. For example, given the minimal `pom.xml` file from before, the WAR file will be named gs-maven-0.1.0.war.
 
     **Note:**  If you’ve changed the value of <packaging> from "jar" to "war", the result will be a WAR file within the target directory instead of a JAR file.
 
@@ -200,7 +200,7 @@ Here’s the completed `pom.xml` file:
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework</groupId>
     <artifactId>hello-world-maven</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>0.1.0</version>
 
     <!-- tag::joda[] -->
@@ -249,4 +249,4 @@ Here’s the completed `pom.xml` file:
 ---
 + To run this project run the following command.
 
-    `java -cp target/jb-hello-world-maven-0.1.0.jar hello.HelloWorld`
+    `java -cp target/jb-hello-world-maven-0.1.0.war hello.HelloWorld`
